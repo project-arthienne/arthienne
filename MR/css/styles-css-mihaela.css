@@ -1,0 +1,288 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* includes padding and border in element's total width and height */
+  font-family: "Courier New", monospace;
+}
+
+body {
+  background-color: #faf9f0;
+  color: #111;
+  display: flex; 
+  flex-direction: column; /* stacks header, main, and footer vertically */
+  min-height: 100vh; 
+}
+
+/* NAVBAR */
+
+.navbar {
+  display: flex; /* horizontal layout */
+  align-items: center;
+  justify-content: space-between; 
+  padding: 1rem 3rem;
+  background: #faf9f0;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none; /* removes default bullets */
+  gap: 2rem;
+}
+
+.navbar a {
+  text-decoration: none; /* removes underline */
+  color: #111;
+  font-size: 0.95rem;
+}
+
+.navbar a.active, .header-right a.active {
+  background-color: #ffd4a3;
+  border: 1px solid #111;
+  padding: 4px 10px;
+  box-shadow: 2px 2px 0 #000; 
+}
+
+.header-right {
+  display: flex; 
+  align-items: center;
+  gap: 1rem;
+}
+
+.my-space {
+  border: 1px solid #111;
+  background: none;
+  padding: 5px 12px;
+  cursor: pointer; /* indicates it's clickable */
+}
+
+.lang-select {
+  border: 1px solid #111;
+  background: none;
+  padding: 5px;
+}
+
+/* MAIN SECTION */
+
+.contact-section {
+  display: flex;
+  justify-content: center; /* centers content horizontally */
+  align-items: center;     /* centers content vertically */
+  flex: 1;                 /* takes all remaining space between header & footer */
+  flex-direction: column;
+  text-align: center;
+}
+
+.contact-section h1 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.contact-section p {
+  font-size: 1rem; 
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  margin-left: 10rem;
+  margin-right: 10rem;
+}
+
+/* CONTACT PAGE */
+
+.contact-form {
+  display: inline-flex;
+  gap: 0.5rem;
+}
+
+.contact-form input,
+.contact-form select {
+  border: 1px solid #111;
+  padding: 0.6rem 1rem;
+  font-family: inherit;
+}
+
+.contact-form select {
+  background-color: #ffd4a3;
+  box-shadow: 2px 2px 0 #000;
+}
+
+/* SIGN IN PAGE */
+
+.sign-in-form {
+  gap: 0.5rem;
+}
+
+.sign-in-form input,
+.sign-in-form select {
+  border: 1px solid #111;
+  padding: 0.6rem 1rem;
+  font-family: inherit;
+}
+
+/* BUTTON */
+
+button {
+  background-color: #ffd4a3;
+  border: 1px solid #111;
+  box-shadow: 2px 2px 0 #000;
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.15s ease; 
+}
+
+button:hover {
+  transform: translateY(1px); /* moves button down by 1px */
+  box-shadow: 1px 1px 0 #000; /* reduces shadow for pressed effect */
+}
+
+/* FAQ PAGE */
+
+.faq-container {
+    max-width: 700px; 
+    margin: auto; /* centers the container */
+}
+
+.faq-title {
+    background: #ffd4a3; 
+    padding: 12px 20px;
+    display: inline-block; 
+    font-size: 36px;
+    font-weight: 700;
+    border-left: 6px solid #d19856;
+}
+
+.faq-item {
+    background: #fff;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    position: relative; /* for positioning the + icon */
+}
+
+.faq-question {
+    display: block; 
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    padding-right: 25px;
+}
+
+.faq-item input {
+    display: none;
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden; 
+    transition: max-height 0.3s ease;
+}
+
+.faq-item input:checked ~ .faq-answer { /* when checkbox is checked */
+    max-height: 200px; /* Adjust for answer size */
+    margin-top: 10px;
+}
+
+.faq-question::after { /* adds a '+' icon after the question */
+    content: '+'; 
+    position: absolute;
+    right: 20px;
+    top: 25px;
+    font-size: 20px;
+    transition: transform 0.3s;
+}
+
+.faq-item input:checked + .faq-question::after {
+    transform: rotate(45deg); /* changes '+' to 'x' when expanded */
+}
+
+.btn-row {
+    text-align: center;
+    margin-top: 40px;
+}
+ 
+.btn-row p { 
+    display: inline-block; 
+    margin-right: 20px;
+    font-size: 18px;
+    
+}
+
+/* TERMS AND CONDITIONS PAGE */
+
+.terms-section {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+    line-height: 1.7;
+}
+
+.terms-section h1 {
+    margin-bottom: 20px;
+}
+
+.terms-section h2 {
+    margin-top: 30px;
+}
+
+
+.terms-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+}
+
+.terms-modal-content {
+    background: #fff;
+    max-width: 500px;
+    margin: 10% auto;
+    padding: 25px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.terms-checkbox {
+    display: block;
+    margin: 20px 0;
+}
+
+.terms-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.btn-primary {
+    background: #000;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-secondary {
+    background: #ccc;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+}
+
+
+/* FOOTER */
+
+footer {
+  text-align: center;
+  padding: 2rem 0;
+  font-size: 0.9rem;
+}
+
+.socials {
+  margin-bottom: 0.5rem;
+}
+
+.socials a {
+  margin: 0 0.5rem;
+  display: inline-block;
+}
