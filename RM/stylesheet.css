@@ -1,55 +1,50 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@300;400;500;600&display=swap');
+* {
 margin: 0;
-font-family: Arial, sans-serif;
-background: #f7e3a7;
-color: #333;
+padding: 0;
+box-sizing: border-box;
 }
 
+/* ---------- BASE ---------- */
+body {
+font-family: 'Playfair Display', serif;
+background-color: #E6DAC2;
+color: #111;
+}
 
+/* ---------- HEADER ---------- */
+.header {
+display: flex;
+align-items: center;
+padding: 20px 60px;
+}
 
-/* NAVIGATION */
-header {
-    padding: 20px 60px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    }
-    .logo {
-     font-weight: bold;
-     font-size: 20px;
-     mix-blend-mode: multiply;
-    }
-nav ul { list-style: none; display: flex; gap: 24px; }
-    nav a {
-    text-decoration: none;
-    color: #222;
-    padding: 8px 18px;
-    border-radius: 16px;
-    background: #fff;
-    border: 1px solid #ddd;
-    }
-    nav a.active { background: #fff4c7; }
-    .right-tools { display: flex; gap: 16px; align-items: center; }
-    .btn-outline {
-    border-radius: 16px; 
-    border: 1px solid #ddd;
-    padding: 8px 14px; 
-    background: #fff; cursor: pointer;
-    }
+.logo-btn img {
+width: clamp(60px, 6vw, 90px);
+display: block;
+mix-blend-mode: multiply;
+}
 
-    .page-title-wrap {
-    padding: 10px 70px 0;
-    font-size: 26px;
-    font-weight: bold;
-    }
+.nav {
+margin: 0 auto;
+}
 
-    .main-layout {
-    padding: 20px 70px 40px;
-    display: grid;
-    grid-template-columns: 2fr 1.2fr;
-    gap: 24px;
-    align-items: flex-start;
-    }
+.nav a {
+text-decoration: none;
+color: #111;
+border: 1px solid #111;
+padding: 6px 14px;
+margin: 0 6px;
+font-size: 14px;
+}
+
+.nav a.active {
+background-color: #F2C48B;
+}
+
+.nav-btn {
+background-color: #F2C48B;
+}
 
 .dates {
     display: flex;
@@ -76,6 +71,11 @@ nav ul { list-style: none; display: flex; gap: 24px; }
     
     
 }
+.auction-product-header {
+    font-size: 28px;
+    margin-bottom: 10px;
+    display: flex 5px;
+}
 
 /* ---------- IMAGE GRID ---------- */
 .image-grid {
@@ -85,14 +85,14 @@ nav ul { list-style: none; display: flex; gap: 24px; }
     width: 100%;
 }
 .main-img {
-    background: #e8e8e8;
-    border: 1px solid #bbb;
+    background: #dad1bf;
+    border: 1px solid black;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 120vh;
     height: 50vh;
-    border-radius: 8px;
+    display:flex 3px;
 }
 
 .thumbs {
@@ -104,14 +104,74 @@ nav ul { list-style: none; display: flex; gap: 24px; }
 .thumb {
     height: 145px;
     width: 200px;
-    background: #f0f0f0;
-    border: 1px solid #bbb;
-    border-radius: 6px;
+    background:#dad1bf;
+    border: 1px solid black;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
+/* ---------- SLIDER AREA ---------- */
+.image-slider-area {
+position: relative;
+display: flex;
+align-items: center;
+gap: 12px;
+}
+
+/* ---------- MAIN SLIDER ---------- */
+.slider {
+width: 120vh;
+height: 50vh;
+overflow: hidden;
+border: 1px solid #333;
+background: #dad1bf;
+}
+
+.slides-wrapper {
+display: flex;
+height: 100%;
+transition: transform 0.5s ease;
+}
+
+.slide {
+min-width: 100%;
+height: 100%;
+object-fit: contain;
+}
+
+/* ---------- THUMBS ---------- */
+.thumbs {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 15px;
+}
+
+.thumb {
+width: 200px;
+height: 145px;
+background: #dad1bf;
+border: 1px solid #333;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+/* ---------- SIDE ARROWS ---------- */
+.side-arrow {
+width: 32px;
+height: 32px;
+border: 1px solid #333;
+background: #fff;
+cursor: pointer;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.side-arrow:hover {
+background: #fff3b0;
+}
 
 
 
@@ -119,14 +179,13 @@ nav ul { list-style: none; display: flex; gap: 24px; }
 .artwork-info h3 {
 background: #fff3b0;
 display: inline-block;
-padding: 6px 12px;
-border-radius: 6px;
+padding: 6px 12p;
 margin-bottom: 10px;
+display: flex 3px;
 }
 .artwork-info p {
 background: #fff9df;
 padding: 15px;
-border-radius: 6px;
 border-left: 3px solid #ccc;
 }
 
@@ -136,12 +195,14 @@ border-left: 3px solid #ccc;
 margin-top: 20px;
 display: flex;
 gap: 20px;
+display: flex 3px;
 }
 .seller, .timer {
 padding: 8px 16px;
 background: #fff3b0;
 border: 1px solid #333;
-border-radius: 6px;
+display: flex 3px;
+
 }
 
 
@@ -151,14 +212,13 @@ border: 1px solid #333;
 width: 350px;
 padding: 20px;
 margin-top: 25px;
-border-radius: 6px;
-background: #fafafa;
+background: #dad1bf;
+display: flex 3px;
 }
 .bid-section h3 {
 background: #fff3b0;
 display: inline-block;
 padding: 6px 14px;
-border-radius: 6px;
 margin-bottom: 15px;
 }
 .base-price {
@@ -173,27 +233,138 @@ margin-bottom: 20px;
 .bid-input input {
 padding: 8px;
 border: 1px solid #333;
-border-radius: 6px;
+
 }
 .bid-input button {
 padding: 8px 14px;
 background: #fff3b0;
 border: 1px solid #333;
 cursor: pointer;
-border-radius: 6px;
+
 }
 .top-bids button {
 padding: 6px 12px;
 margin-right: 6px;
 border: 1px solid #333;
 background: #fff;
-border-radius: 6px;
 cursor: pointer;
 }
 
-footer {
-text-align: center;
-padding: 20px;
-margin-top: 40px;
 
+/* Styling for the 500$, 470$, 350$ buttons */
+.top-bids button {
+    padding: 10px 15px;
+    margin-right: 8px;
+    border: 1px solid #333;
+    background: #fff;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-weight: bold;
+}
+
+.top-bids button:hover {
+    background: #F2C48B; /* Matches your active nav color */
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Styling for the main Bid button */
+#bidBtn {
+    transition: background 0.3s;
+}
+
+#bidBtn:hover {
+    background: #e2d29c;
+    color: #000;
+}
+
+
+
+/* ---------- FOOTER ---------- */
+.site-footer {
+margin-top: 60px;
+padding: 50px 0;
+background-color: #E6DAC2;
+text-align: center;
+}
+
+.foot-left strong {
+font-family: 'Cormorant Garamond', serif;
+font-size: 30px;
+}
+
+.foot-left p {
+margin-top: 4px;
+}
+
+.footer-nav {
+margin-top: 20px;
+display: flex;
+gap: 20px;
+justify-content: center;
+}
+
+.footer-nav a {
+text-decoration: none;
+font-weight: 500;
+color: var(--muted);
+transition: 0.2s;
+}
+
+.footer-nav a:hover {
+color: var(--text);
+transform: translateY(-2px);
+}
+
+.footer-bottom {
+margin-top: 25px;
+font-size: 14px;
+color: var(--muted);
+}
+
+/* -----------------------------------------
+FOOTER — Social Media Icons
+------------------------------------------ */
+
+.footer-social {
+display: flex;
+gap: 16px;
+margin-top: 12px;
+justify-content: center;
+width: 100%;
+}
+
+.footer-social a img {
+width: 20px;
+height: 20px;
+opacity: 0.75;
+transition: 0.25s;
+filter: grayscale(100%);
+}
+
+.footer-social a img:hover {
+opacity: 1;
+transform: translateY(-3px);
+filter: grayscale(0%);
+}
+
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 768px) {
+.header {
+    flex-direction: column;
+}
+
+.nav {
+    margin-top: 16px;
+    text-align: center;
+}
+
+.auctions-section {
+    padding: 40px 24px;
+}
+
+.section-header h1 {
+    font-size: 32px;
+}
 }

@@ -1,155 +1,267 @@
-body{
-padding: 6px 12px;
-border-radius: 8px;
-background: #f7e3a7;
+/* ---------- RESET ---------- */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@300;400;500;600&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.see-all{
-float: right;
-
+/* ---------- BASE ---------- */
+body {
+  font-family: 'Playfair Display', serif;
+  background-color: #E6DAC2;
+  color: #111;
 }
 
-.logo{
-height: 60px;
-width: 60px;
-border: radius 50%;
-transition: opacity 0.3s;
-mix-blend-mode: multiply;
-}
-.navbar {
-display: flex;
-align-items: center;
-justify-content: space-between;
-padding: 1rem 3rem;
-background: #f7e3a7;
+/* ---------- HEADER ---------- */
+.header {
+  display: flex;
+  align-items: center;
+  padding: 20px 60px;
 }
 
-.navbar ul {
-display: flex;
-list-style: none;
-gap: 2rem;
+.logo-btn img {
+  width: clamp(60px, 6vw, 90px);
+  display: block;
+  mix-blend-mode: multiply;
 }
 
-.navbar a {
-text-decoration: none;
-color: #111;
-font-size: 0.95rem;
+.nav {
+  margin: 0 auto;
 }
 
-.nav-links{
-border: 1px solid black;
-border-radius: 20px;
-padding: 5px 25px;
-display: flex;
-justify-content: space-between;
-align-items: center;
-box-sizing: content-box;
+.nav a {
+  text-decoration: none;
+  color: #111;
+  border: 1px solid #111;
+  padding: 6px 14px;
+  margin: 0 6px;
+  font-size: 14px;
 }
 
-.navbar a.active {
-background-color: #ffd4a3;
-border: 1px solid #111;
-padding: 4px 10px;
-box-shadow: 2px 2px 0 #000; 
+.nav a.active {
+  background-color: #F2C48B;
 }
 
-.header-right {
-display: flex; 
-align-items: center;
-gap: 1rem;
-position: relative;
-left: 25px;
+.nav-btn {
+  background-color: #F2C48B;
 }
 
-.header-right a.active {
-background-color: #ffd4a3;
-border: 1px solid #111;
-padding: 4px 10px;
-box-shadow: 2px 2px 0 #000;
-}
-.my-space {
-border: 1px solid #111;
-border-radius: 12px;
-background: none;
-padding: 5px 12px;
-cursor: pointer;
-}
-
-.lang-select {
-border: 1px solid #111;
-background: none;
-padding: 5px;
-}
-
-  /* AUCTION PAGE */
+/* ---------- AUCTIONS ---------- */
 .auctions-section {
-padding: 40px;
+  padding: 80px 60px;
 }
-.auctions-section h1 {
-font-size: 32px;
-margin-bottom: 20px;
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
 }
+
+.section-header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 42px;
+}
+
+
+.btn-outline {
+  background: none;
+  border: 1px solid #111;
+  padding: 6px 16px;
+  cursor: pointer;
+  text-decoration: none;
+  color: #111;
+  display: inline-block;
+}
+
+
+/* ---------- GRID ---------- */
 .auction-grid {
-display: grid;
-grid-template-columns: repeat(4, 1fr);
-gap: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
 }
 
 .card {
-padding: 10px;
-text-align: center;
-border-radius: 6px;
+  text-align: center;
 }
 
 .img-box {
-height: 220px;
-background: #eee;
-border: 2px solid #333;
-display: flex;
-justify-content: center;
-align-items: center;
+  height: 260px;
+  background: rgba(255, 255, 255, 0.35);
+  margin-bottom: 14px;
 }
+.img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+
+/* ---------- TEXT ---------- */
+.card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+
+.muted {
+  font-size: 13px;
+  opacity: 0.8;
+}
+
 .price {
-font-weight: bold;
-margin-top: 8px;
+  margin-top: 8px;
+  font-weight: 600;
+}
+
+/* ---------- FOOTER ---------- */
+.site-footer {
+  margin-top: 60px;
+  padding: 50px 0;
+  background-color: #E6DAC2;
+  text-align: center;
+}
+
+.foot-left strong {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 30px;
+}
+
+.foot-left p {
+  margin-top: 4px;
+}
+
+.footer-nav {
+  margin-top: 20px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.footer-nav a {
+  text-decoration: none;
+  font-weight: 500;
+  color: var(--muted);
+  transition: 0.2s;
+}
+
+.footer-nav a:hover {
+  color: var(--text);
+  transform: translateY(-2px);
+}
+
+.footer-bottom {
+  margin-top: 25px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+/* -----------------------------------------
+  FOOTER — Social Media Icons
+------------------------------------------ */
+
+.footer-social {
+  display: flex;
+  gap: 16px;
+  margin-top: 12px;
+  justify-content: center;
+  width: 100%;
+}
+
+.footer-social a img {
+  width: 20px;
+  height: 20px;
+  opacity: 0.75;
+  transition: 0.25s;
+  filter: grayscale(100%);
+}
+
+.footer-social a img:hover {
+  opacity: 1;
+  transform: translateY(-3px);
+  filter: grayscale(0%);
 }
 
 
-  /*  PAGE */
-.exhibition {
-padding: 40px;
+
+
+
+.auction-grid {
+  display: grid;
+  /* This creates a flexible grid that automatically fits as many items as possible */
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 30px;
 }
-.title-row {
-display: flex;
-align-items: center;
-gap: 20px;
+
+/* Ensure images don't break their containers */
+.img-box {
+  width: 100%;
+  height: 300px; /* Fixed height for consistency */
+  background: rgba(255, 255, 255, 0.35);
+  margin-bottom: 14px;
+  overflow: hidden;
 }
-.banner {
-    height: 300px;
-    margin: 20px 0;
-    background: #eee;
-    border: 2px solid #333;
+
+.img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Change to 'cover' for a cleaner professional look */
+  display: block;
+}
+
+
+
+/* Tablets and below (under 992px) */
+@media (max-width: 992px) {
+  .header {
+    padding: 20px 30px;
+  }
+  .auctions-section {
+    padding: 40px 30px;
+  }
+}
+
+/* Mobile Devices (under 768px) */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .nav {
     display: flex;
+    flex-wrap: wrap; /* Allows links to wrap to a second line on tiny screens */
     justify-content: center;
-    align-items: center;
-}
-.small .card {
-padding: 15px;
-}
-.details {
-    margin-top: 10px;
-    padding: 6px 12px;
-    border: 1px solid #333;
-    border-radius: 6px;
-    background: #fff3b0;
-    cursor: pointer;
-}
+    gap: 10px;
+  }
 
-  /* FOOTER */
-footer {
-text-align: center;
-padding: 20px;
-margin-top: 40px;
+  .nav a {
+    margin: 0;
+    font-size: 13px;
+    padding: 8px 10px;
+  }
+
+  .section-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+
+  .section-header h1 {
+    font-size: 32px;
+  }
+
+  .auction-grid {
+    /* On mobile, usually 1 column or 2 small columns is best */
+    grid-template-columns: 1fr; 
+  }
+
+  .footer-nav {
+    flex-direction: column;
+    gap: 10px;
+  }
 }
-
-

@@ -3,26 +3,76 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Auctions</title>
-<link rel="stylesheet" href="stylesheet.css"/>
+<title>Auction-Product</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="stylesheet.css" />
 </head>
+
+
+<script>
+// Wait for the page to load before running the script
+document.addEventListener("DOMContentLoaded", () => {
+
+// --- SLIDER LOGIC ---
+const wrapper = document.querySelector(".slides-wrapper");
+const slides = document.querySelectorAll(".slide");
+let index = 0;
+
+document.querySelector(".side-arrow.right").onclick = () => {
+index = (index + 1) % slides.length;
+ wrapper.style.transform = `translateX(-${index * 100}%)`;
+};
+
+document.querySelector(".side-arrow.left").onclick = () => {
+index = (index - 1 + slides.length) % slides.length;
+zwrapper.style.transform = `translateX(-${index * 100}%)`;
+};
+
+// --- BIDDING LOGIC ---
+const bidInput = document.getElementById("bidAmount");
+const quickBidButtons = document.querySelectorAll(".quick-bid");
+const bidBtn = document.getElementById("bidBtn");
+
+// When a quick-bid button (500$, 470$, etc.) is clicked
+quickBidButtons.forEach(button => {
+button.addEventListener("click", () => {
+// Remove the '$' sign and put the number into the input field
+const value = button.textContent.replace('$', '');
+bidInput.value = value;
+});
+});
+
+// When the main "Bid" button is clicked
+bidBtn.addEventListener("click", () => {
+const finalAmount = bidInput.value;
+if (finalAmount) {
+alert("Bid placed successfully for: $" + finalAmount);
+} else {
+alert("Please enter an amount first!");
+}
+});
+});
+</script>
+
 <body>
-<header class="navbar">
-<div class="logo">
-<img src="C:\Users\M. Ramya\OneDrive\Pictures\ARTHIENNE.png" alt=" "  width="50px" height="50px">
-</div>
-<div class="nav-links">
-<nav>
-<a href="#">Auctions</a>
+
+<header class="header">
+<a href="home.html" class="logo-btn">
+<img src="C:\Users\M. Ramya\OneDrive\Pictures\ARTHIENNE.png" alt="Arthienne Logo">
+</a>
+
+<nav class="nav">
+<a href="home.html">Home</a>
+<a href="auction.html" class="active">Auctions</a>
 <a href="#">Shop</a>
 <a href="#">Exhibitions</a>
-<a href="#">Contact Us</a>
-<a href="#"> My Space</a>
-</nav>
+<a href="contact.html">Contact Us</a>
+<a href="#">My Space</a>
 </div>
 
 
-<div class="lang">EN ▼</div>
+
 </header>
 
 
@@ -41,25 +91,38 @@
 
 <div class="auction-card">
     
-    <!-- Image Grid -->
-    <div class="image-grid">
-        
-        <div class="main-img">
-            Image Placeholder
-        </div>
+<!-- Image Grid -->
+<div class="image-slider-area">
 
-        <div class="thumbs">
-            <div class="thumb">Image</div>
-            <div class="thumb">Image</div>
-            <div class="thumb">Image</div>
-            <div class="thumb">Image</div>
-        </div>
-        
-    </div>
+<!-- LEFT ARROW -->
+<button class="side-arrow left">&#10094;</button>
 
+<!-- IMAGE GRID -->
+<div class="image-grid">
+    
+<!-- MAIN IMAGE -->
+<div class="main-img slider">
+<div class="slides-wrapper">
+<img src="https://www.art.com/on/demandware.static/-/Library-Sites-TrendsSharedLibrary/default/dwed55706f/Art%20Landing%20Pages/Artists/art-lp-artists_newemergingartists_liliaorlovaholmes%20_0601.jpg" class="slide">
+</div>
+</div>
 
+<!-- THUMBNAILS -->
+<div class="thumbs">
+<img src="https://images.stockcake.com/public/2/c/6/2c610f2c-b13a-4eb8-beac-53e2739d2bd4_large/vibrant-abstract-art-stockcake.jpg" alt="Thumbnail 1" class="thumb">
+<img src="https://royalthaiart.com/wp-content/uploads/2021/10/nature-artwork-1024x512.jpg" alt="Thumbnail 2" class="thumb">
+<img src="https://images.pexels.com/photos/1109354/pexels-photo-1109354.jpeg" alt="Thumbnail 3" class="thumb">
+<img src="https://www.pictureframesexpress.co.uk/blog/wp-content/uploads/2020/05/7-Tips-to-Finding-Art-Inspiration-Header-1024x649.jpg" alt="Thumbnail 4" class="thumb">
 
 </div>
+
+</div>
+
+<!-- RIGHT ARROW -->
+<button class="side-arrow right">&#10095;</button>
+
+</div>
+
 
 
 <div class="artwork-info">
@@ -83,29 +146,52 @@
 
 
 <div class="bid-input">
-<input type="text" placeholder="Bid Amount">
-<button>Bid</button>
+<input type="number" id="bidAmount" placeholder="Bid Amount">
+<button id="bidBtn">Bid</button>
 </div>
+
 
 
 <div class="top-bids">
-<button>500$</button>
-<button>470$</button>
-<button>350$</button>
+<button class="quick-bid">500$</button>
+<button class="quick-bid">470$</button>
+<button class="quick-bid">350$</button>
 </div>
+
 </div>
 </section>
 
+<!-- FOOTER -->
+<footer class="site-footer">
+<div class="container footer-inner">
+<div class="foot-left">
+        <strong>Arthienne</strong>
+        <p class="muted">© <span id="year"></span> • All rights reserved</p>
+    </div>
+    <div class="foot-right">
+        <nav class="footer-nav">
+        <a href="home.html">Home</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        </nav>
+</div>
+</div>
+<div class="footer-social">
+<a href="https://www.instagram.com/arthienne05?igsh=MTE5bXI5dWloM2Z0bQ==" target="_blank">
+<img src="https://img.icons8.com/?size=100&id=59813&format=png&color=000000" alt="instagram-new">
+</a>
 
-<footer>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAABWUlEQVR4nO2WwU7CQBCGv7t4A05y5ih6EDH6Dkp8IJEnUOQhMCQ8iehD6E1NWz3IQTEb/yakobutmRoP/Mkkzc7MfpnJdLKw0T9QExgC98A7sCxoLnau3EZZ6DmQlIDlWQz0y0C/DKCpfRaBN40qzVoUavvQCHQEHGfOBj7wgxHYQU8yZ3MfONTmD+AK6AJbMvc9AhaB3MQH9iU+Arue3I5ifHfkyldpCm0BU1XgbAa05dsLVJ6rvATX3hT6ssb/Kp/TjSX4QP6pJ+ZWMYeW4FqB4XNbymn7r8FRFeCu/DNPzEQxPUvwtfxtDVLW/wzsKGZs/Tt1FNPSIMWyyQp03/p3Wmo5pPB1ctCnwB2/XpkLrceeBq6m73GBlRnnY39eG8uK7M4HvqwQfOEDN9QSa2gE1Amor+eKFdTddRqCrsIjo0rPikJT1fVccUPxVgKWKGdQpL0bUbW+AcdI0V4wAXsCAAAAAElFTkSuQmCC" alt="instagram-new">
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA3klEQVR4nO2Wuw4BQRiFvxU6l0Kj8wIaFRWVxAZvofcaKs/hAXQ6IipvoNoVUYpCRNgVyWwyprHFzKzLnuQUc/7z5ytmioFU/6gesANCTfYBNw7Y1wiN7MUBh4b8VurCEVgCZ5vgE1AVeR242QKvlZlnC3wBGiIfAIHNO74D+yQe11h4Is4HKZsBW2AE9IEhsNIFdkSeF+eN1G0CJWU/A8xNgyOVeVXHNNgBFiKfSnnFNLgm9a5AVuQ50+CW0i1Is8AkuK10iymYbwSHmvy5YD+pr4+rGf6EduOAU/2WHkbFex+cdcctAAAAAElFTkSuQmCC" alt="linkedin">
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAACMElEQVR4nO2WTUhVURDHf2mBLoIWEZhPaSFuIohWSZtam6IgGZRr6UMNhMClrVwVEQqPFBQUKQhKfPQBUjtpGS16UQtNUEHCei8lyGdxYIRhOPfce58SLhw4izvzn/kzc2bmXDiQfSj1QA/wCsgDv+TkRXcbqNtLwlogC2wBf2NOCXgKnNotaRtQTEBoTwFoLZe0TzJIS6qz7y0n01JEwK/AGHAPGAAeAPMRV1FKk3kmorzvgPMBvwa5X1/ZTyYhHvM4u6wqxX4EuATcALqBJqBC+fd7/B8nGRlbsmfAIbG7si15An8Azqg4w8a+JZWMlB7j8FvNZntMs62p4MeAdWO/FSJ+acAvRF8NrIhuDjgNXPQEf6RijRtbLkT82YDdfTlplu9N4ITCTxr8l0D18iHiggF3if6OfL83+BmD/6Fs1zzdHSkbBryzAK56iF2Xfzf4hUDGhWha+GbA06LPSKMVZZyQMbIN9lzFGk1T6pwBb6rhd/O9rLCDHuJOsR32jF0uRHzXE+y1dLXL/onC3je4t2qRXPfEuRkizkTs3I8yOr1m2czJvboxOir6GmDV+P+JWyBOpgJL4pzay3pN7kgj8Mnjl40jDT0SP9W+HpZs3St2VuZ8RHrC51dDQukAtk2AN8qeD1RFH7diW5KS6h+BbU+5GlKQulkuS66ofTwkuqEEpK68l9mlZIAJ4CFw3PMw2O7NprnTJFIFXABmgUVZr0Xp4pzMaezIHAj/W/4B9AVMM53xF14AAAAASUVORK5CYII=" alt="pinterest">
+<a href="https://x.com/arthienne" target="_blank">
+<img src="https://img.icons8.com/?size=100&id=01GWmP9aUoPj&format=png&color=000000" alt="Twitter">
+</a>
+<a href="mailto:arthienne05@gmail.com" target="_blank">
+<img src="https://img.icons8.com/?size=100&id=60987&format=png&color=000000" alt="email">
+</a>
 
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAABKUlEQVR4nO3WvSvFURzH8VdZPGWiZFFCWRhksZPrYTVYPfwNJkxWG/4Dg/I0KLPCwG6wcIVkIil0r9S59Uu37o3fodz7qW+nzjmd9+/3/XxOHaqqRI3hGvmUKotMOeBsitBCXZUDzkeqkqqC79H6Zc90kX1naMJWmn+8hxps4AAN2E6sX6INKzFaPYt+vGINzbjFI/owF8vjJ3RiEblw30cxhHG8xwzXMWrDeIcW9ISPip7qBXSEFu8Hv89/A/yGXswkvB8I3kcFH6IR9dgJbe4KnYgGvgi+rmI9JPsGp6jDUQzwA7oxn5ibwHBI+VLC+9TALxjEZIAU5gvJXsYJ2hPe/xicw1QI0HOR9d0iZ2zGCFf+m1VSlQfO/tXTJ5My/BM6Ug64qv+lDyTCqy0bONlKAAAAAElFTkSuQmCC" alt="twitterx--v1">
-    
-<div class="social">© 2025, Arthienne</div>
+
+</div>
 </footer>
+
 </body>
 </html>
-
