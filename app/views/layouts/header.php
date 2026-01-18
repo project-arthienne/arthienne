@@ -8,7 +8,24 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playwrite+US+Modern&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="/arthienne/public/css/main.css">
+<link rel="stylesheet" href="/arthienne/public/css/base.css">
+<link rel="stylesheet" href="/arthienne/public/css/layout.css">
+<link rel="stylesheet" href="/arthienne/public/css/navigation.css">
+
+<link rel="stylesheet" href="/arthienne/public/css/components/ui.css">
+<link rel="stylesheet" href="/arthienne/public/css/components/gallery.css">
+<link rel="stylesheet" href="/arthienne/public/css/components/forum.css">
+<link rel="stylesheet" href="/arthienne/public/css/components/pagination.css">
+<link rel="stylesheet" href="/arthienne/public/css/components/exhibition.css">
+<link rel="stylesheet" href="/arthienne/public/css/components/footer.css">
+
+<link rel="stylesheet" href="/arthienne/public/css/palette.css">
+
+<link rel="stylesheet" href="/arthienne/public/css/pages/home.css">
+<link rel="stylesheet" href="/arthienne/public/css/pages/contact.css">
+<link rel="stylesheet" href="/arthienne/public/css/pages/faq.css">
+<link rel="stylesheet" href="/arthienne/public/css/pages/terms.css">
+
 <title>Arthienne</title>
 </head>
 
@@ -17,7 +34,9 @@
 
 <header class="header navbar">
     <div class="logo">
-        <img src="/arthienne/public/assets/images/logo.png" width="60" height="50">
+        <a href="/arthienne/public/">
+            <img src="/arthienne/public/assets/images/logo.png" width="60" height="50">
+        </a>
     </div>
 
     <nav>

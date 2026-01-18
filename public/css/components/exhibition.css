@@ -1,0 +1,28 @@
+.exhibition-card{
+display:flex;
+justify-content:space-between;
+align-items:flex-start;
+padding:28px 32px;
+margin:32px 0;
+border:1px solid var(--black);
+box-shadow:6px 6px 0 var(--black);
+cursor:pointer;
+}
+
+.exhibition-left h3{
+font-size:24px;
+margin:0 0 10px 0;
+font-family:inherit;
+}
+
+.exhibition-left p{
+margin:0;
+max-width:640px;
+}
+
+.exhibition-right{
+text-align:right;
+display:flex;
+flex-direction:column;
+gap:8px;
+}

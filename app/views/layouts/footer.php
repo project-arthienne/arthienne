@@ -9,6 +9,5 @@
     </div>
     <p>2025, Arthienne</p>
 </footer>
-
 </body>
 </html>

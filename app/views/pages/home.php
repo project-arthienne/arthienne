@@ -13,27 +13,18 @@
 </section>
 
 <section class="about-section">
-<div class="about-text">
+<div class="about-text full-width">
 <span class="tag">Arthienne</span>
 <p>
-Arthienne is a vibrant platform where art comes alive. We showcase unique paintings
-and give artists the space to upload, display, sell, or even put their work up for bidding.
-Whether you are an artist, a collector, or simply an art enthusiast, Arthienne connects
-you with creativity and discovery.
+We showcase original artworks and limited prints. Every piece is hand-selected and presented with care.
+Whether you are an artist, a collector, or simply an art enthusiast, Arthienne connects you with creativity,
+discovery, and timeless expression.
 </p>
 <a class="about-link">More →</a>
 </div>
-
-<div class="about-mosaic">
-<img src="/arthienne/public/assets/images/placeholder-image">
-<img src="/arthienne/public/assets/images/placeholder-image">
-<img src="/arthienne/public/assets/images/placeholder-image">
-<img src="/arthienne/public/assets/images/placeholder-image">
-<img src="/arthienne/public/assets/images/placeholder-image">
-<img src="/arthienne/public/assets/images/placeholder-image">
-<img src="/arthienne/public/assets/images/placeholder-image">
-</div>
 </section>
+
+<?php include __DIR__ . '/../components/palette.php'; ?>
 
 <section class="palette-section">
 <div class="palette-header-row">
@@ -41,7 +32,7 @@ you with creativity and discovery.
 <button class="btn-compact">See All</button>
 </div>
 
-<?php include __DIR__ . '/../partials/palette.php'; ?>
+<?php include __DIR__ . '/../components/palette.php'; ?>
 </section>
 
 <section class="palette-section">
@@ -50,19 +41,8 @@ you with creativity and discovery.
 <button class="btn-compact">See All</button>
 </div>
 
-<?php include __DIR__ . '/../partials/palette.php'; ?>
+<?php include __DIR__ . '/../components/palette.php'; ?>
 </section>
 
-<section class="newsletter-section">
-<div class="newsletter-left">
-<h3>Get 20% off!</h3>
-<p>Enter your email address to receive a discount code.</p>
-</div>
-
-<form class="newsletter-form">
-<input type="email" placeholder="Email">
-<button class="btn-compact">Receive Code</button>
-</form>
-</section>
-
+<?php include __DIR__ . '/../components/discount.php'; ?>
 <?php require __DIR__ . '/../layouts/footerExtended.php'; ?>
