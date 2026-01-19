@@ -1,5 +1,7 @@
 <?php require '../app/views/layouts/header.php'; ?>
 
+<div class="page-wrapper" style="padding-top:120px;">
+
 <main class="contact-section">
 <h1>Get In Touch</h1>
 <p>To assist you better, please share your email and select the subject of your inquiry. Our team will reach out to you promptly.</p>
@@ -35,6 +37,8 @@ I agree to the <a href="/arthienne/public/terms" target="_blank">Terms And Condi
 </div>
 </div>
 
+</div>
+
 <script>
 const modal=document.getElementById('termsModal')
 const checkbox=document.getElementById('acceptTerms')
@@ -45,4 +49,4 @@ checkbox.onchange=()=>confirmBtn.disabled=!checkbox.checked
 function openTermsModal(){modal.style.display='block'}
 </script>
 
-<?php require '../app/views/layouts/footer.php'; ?>
+<?php require '../app/views/layouts/footerExtended.php'; ?>

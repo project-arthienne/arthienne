@@ -20,6 +20,9 @@
 <link rel="stylesheet" href="/arthienne/public/css/components/footer.css">
 
 <link rel="stylesheet" href="/arthienne/public/css/palette.css">
+<link rel="stylesheet" href="/arthienne/public/css/components/dealCarousel.css">
+<link rel="stylesheet" href="/arthienne/public/css/pages/directDeals.css">
+
 
 <link rel="stylesheet" href="/arthienne/public/css/pages/home.css">
 <link rel="stylesheet" href="/arthienne/public/css/pages/contact.css">
@@ -30,23 +33,24 @@
 </head>
 
 <body>
-<div class="page-wrapper">
 
 <header class="header navbar">
-    <div class="logo">
-        <a href="/arthienne/public/">
-            <img src="/arthienne/public/assets/images/logo.png" width="60" height="50">
-        </a>
-    </div>
+    <div class="header-inner">
+        <div class="logo">
+            <a href="/arthienne/public/">
+                <img src="/arthienne/public/assets/images/logo.png" width="60" height="50">
+            </a>
+        </div>
 
-    <nav>
-        <ul class="nav">
-            <li><a class="nav-item" href="/arthienne/public/auctions">Auctions</a></li>
-            <li><a class="nav-item" href="/arthienne/public/exhibitions">Exhibitions</a></li>
-            <li><a class="nav-item" href="/arthienne/public/forums">Forums</a></li>
-            <li><a class="nav-item" href="/arthienne/public/contact">Contact Us</a></li>
-            <li><a class="nav-item" href="/arthienne/public/faq">FAQ</a></li>
-            <li><a class="nav-item" href="/arthienne/public/singin">My Space</a></li>
-        </ul>
-    </nav>
+        <nav>
+            <ul class="nav">
+                <li><a class="nav-item" href="/arthienne/public/directdeals">Deals</a></li>
+                <li><a class="nav-item" href="/arthienne/public/exhibitions">Exhibitions</a></li>
+                <li><a class="nav-item" href="/arthienne/public/forums">Forums</a></li>
+                <li><a class="nav-item" href="/arthienne/public/contact">Contact Us</a></li>
+                <li><a class="nav-item" href="/arthienne/public/faq">FAQ</a></li>
+                <li><a class="nav-item" href="/arthienne/public/singin">My Space</a></li>
+            </ul>
+        </nav>
+    </div>
 </header>

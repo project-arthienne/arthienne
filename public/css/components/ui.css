@@ -4,6 +4,7 @@ background:var(--copper);
 padding:6px 12px;
 font-size:16px;
 font-family:inherit;
+font-weight: bold;
 transition:all .25s ease;
 }
 
@@ -26,7 +27,7 @@ button,
 .my-space{
 font-family:'Playwrite US Modern',sans-serif;
 background:var(--copper);
-padding:8px 16px;
+padding:4px 10px;
 font-size:16px;
 border:1px solid var(--black);
 cursor:pointer;
@@ -45,5 +46,23 @@ border:1px solid var(--black);
 background:none;
 padding:8px 12px;
 font-family:'Playwrite US Modern',sans-serif;
+font-size:16px;
+}
+
+.newsletter-form{
+display:flex;
+flex-direction:column;
+gap:16px;
+max-width:320px;
+}
+
+.newsletter-form input{
+padding:14px 16px;
+font-size:16px;
+border:1px solid var(--black);
+}
+
+.newsletter-form button{
+padding:9px 11px;
 font-size:16px;
 }

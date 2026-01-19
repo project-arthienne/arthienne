@@ -1,5 +1,7 @@
 <?php require '../app/views/layouts/header.php'; ?>
 
+<div class="page-wrapper" style="padding-top:120px;">
+
 <h1 class="page-title">Exhibition Title</h1>
 
 <div class="gallery-outer">
@@ -39,25 +41,12 @@ Together, these works form a unified narrative that encourages close observation
 
 <button class="btn-compact">Contact Artist</button>
 
-<div class="palette-section">
+<section class="palette-section">
 <div class="palette-header">Related Works</div>
 
-<div class="palette-outer">
-<button class="palette-arrow left" onclick="slideLeft()">&#8249;</button>
-<button class="palette-arrow right" onclick="slideRight()">&#8250;</button>
+<?php include '../app/views/components/palette.php'; ?>
+</section>
 
-<div class="palette-wrapper">
-<div class="palette-track" id="paletteTrack">
-<?php for($i=0;$i<6;$i++): ?>
-<div class="palette-item">
-<img src="/arthienne/public/assets/images/placeholder-image.jpg">
-<span>Artwork Title</span>
-<button class="btn-compact">See Details</button>
-</div>
-<?php endfor; ?>
-</div>
-</div>
-</div>
 </div>
 
 <script>
@@ -79,23 +68,6 @@ function nextImage(){
 currentIndex=(currentIndex+1)%thumbs.length;
 setImage(currentIndex);
 }
-
-const track=document.getElementById('paletteTrack');
-const items=document.querySelectorAll('.palette-item');
-const itemWidth=items[0].offsetWidth+24;
-let index=0;
-
-function slideLeft(){
-index--;
-if(index<0){index=items.length-1;}
-track.style.transform=`translateX(${-index*itemWidth}px)`;
-}
-
-function slideRight(){
-index++;
-if(index>=items.length){index=0;}
-track.style.transform=`translateX(${-index*itemWidth}px)`;
-}
 </script>
 
-<?php require '../app/views/layouts/footer.php'; ?>
+<?php require '../app/views/layouts/footerExtended.php'; ?>

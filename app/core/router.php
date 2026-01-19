@@ -42,6 +42,18 @@ class Router {
             return;
         }
 
+        if ($path === '/directdeals') {
+            require '../app/controllers/directDealsController.php';
+            (new directDealsController())->index();
+            return;
+        }
+
+        if ($path === '/directdeals/view') {
+            require '../app/controllers/directDealsController.php';
+            (new directDealsController())->view();
+            return;
+        }
+
         if ($path === '/signin') {
             require '../app/controllers/signinController.php';
             (new signinController())->index();

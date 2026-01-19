@@ -9,5 +9,6 @@
     </div>
     <p>2025, Arthienne</p>
 </footer>
+<script src="/public/js/palette.js"></script>
 </body>
 </html>
