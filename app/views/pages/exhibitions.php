@@ -4,6 +4,7 @@
 
 <h1 class="page-title">Exhibitions</h1>
 
+<div class="content-column">
 <?php
 $exhibitions = [
 
@@ -22,14 +23,15 @@ $exhibitions = [
 ];
 
 foreach($exhibitions as $e){
-$id=$e['id'];
-$title=$e['title'];
-$description=$e['desc'];
-$date=$e['date'];
-$seller=$e['seller'];
-require '../app/views/components/exhibitionCard.php';
+    $id = $e['id'];
+    $title = $e['title'];
+    $description = $e['desc'];
+    $date = $e['date'];
+    $seller = $e['seller'];
+    require '../app/views/components/exhibitionCard.php';
 }
 ?>
+</div>
 
 </div>
 

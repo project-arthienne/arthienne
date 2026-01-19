@@ -1,18 +1,26 @@
 <?php require '../app/views/layouts/header.php'; ?>
 
-<section class="contact-section">
-    <h1 class="page-title">My Space</h1>
+<div class="page-wrapper" style="padding-top:120px;">
 
-    <p class="page-subtitle">
-        A personalised space for artists, collectors, and buyers to manage their activity within Arthienne.
-    </p>
+<h1 class="page-title">My Space</h1>
 
-    <form class="sign-in-form" style="display:flex; flex-direction:column; gap:24px; max-width:420px; width:100%;">
-        <input type="email" placeholder="Email address" required>
-        <input type="password" placeholder="Password" required>
+<p class="page-subtitle">
+A personalised space for artists, collectors, and buyers to manage their activity within Arthienne.
+</p>
 
-        <button type="submit">Step Inside</button>
-    </form>
+<section class="contact-section signin-page">
+
+    <div class="signin-form-wrapper">
+        <form class="sign-in-form">
+            <input type="email" placeholder="Email address" required>
+            <input type="password" placeholder="Password" required>
+
+            <button type="submit" class="btn-compact">Step Inside</button>
+        </form>
+    </div>
+
 </section>
 
-<?php require '../app/views/layouts/footer.php'; ?>
+</div>
+
+<?php require '../app/views/layouts/footerExtended.php'; ?>

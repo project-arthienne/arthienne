@@ -2,9 +2,13 @@
 
 <div class="page-wrapper" style="padding-top:120px;">
 
-<div class="faq-container">
+<h1 class="page-title">Frequently Asked Questions</h1>
 
-<h1 class="faq-title">Frequently Asked Questions</h1>
+<p class="page-subtitle">
+Find clear answers to common questions about exhibitions, auctions, and using Arthienne.
+</p>
+
+<div class="faq-container">
 
 <div class="faq-item">
 <input type="checkbox" id="q1">
@@ -54,15 +58,14 @@
 </div>
 </div>
 
-<div style="margin-top:72px; text-align:center;">
+<div class="faq-cta">
 <p>Still confused?</p>
 <a href="/arthienne/public/contact">
-<button>Contact Us</button>
+<button class="btn-compact">Contact Us</button>
 </a>
 </div>
 
 </div>
-
 </div>
 
 <?php require '../app/views/layouts/footerExtended.php'; ?>

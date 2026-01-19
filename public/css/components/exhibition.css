@@ -7,6 +7,7 @@ margin:32px 0;
 border:1px solid var(--black);
 box-shadow:6px 6px 0 var(--black);
 cursor:pointer;
+max-width:100%;
 }
 
 .exhibition-left h3{
@@ -25,4 +26,8 @@ text-align:right;
 display:flex;
 flex-direction:column;
 gap:8px;
+}
+
+.content-column{
+width:100%;
 }
