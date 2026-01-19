@@ -21,12 +21,15 @@
 
 <link rel="stylesheet" href="/arthienne/public/css/palette.css">
 <link rel="stylesheet" href="/arthienne/public/css/components/dealCarousel.css">
+<link rel="stylesheet" href="/arthienne/public/css/components/auctionCarousel.css">
 <link rel="stylesheet" href="/arthienne/public/css/pages/directDeals.css">
 
 
 <link rel="stylesheet" href="/arthienne/public/css/pages/home.css">
 <link rel="stylesheet" href="/arthienne/public/css/pages/contact.css">
 <link rel="stylesheet" href="/arthienne/public/css/pages/faq.css">
+<link rel="stylesheet" href="/arthienne/public/css/pages/dealView.css">
+<link rel="stylesheet" href="/arthienne/public/css/pages/auctionView.css">
 <link rel="stylesheet" href="/arthienne/public/css/pages/terms.css">
 
 <title>Arthienne</title>
@@ -46,6 +49,7 @@
             <ul class="nav">
                 <li><a class="nav-item" href="/arthienne/public/directdeals">Deals</a></li>
                 <li><a class="nav-item" href="/arthienne/public/exhibitions">Exhibitions</a></li>
+                <li><a class="nav-item" href="/arthienne/public/auctions">Auctions</a></li>
                 <li><a class="nav-item" href="/arthienne/public/forums">Forums</a></li>
                 <li><a class="nav-item" href="/arthienne/public/contact">Contact Us</a></li>
                 <li><a class="nav-item" href="/arthienne/public/faq">FAQ</a></li>

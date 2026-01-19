@@ -68,3 +68,12 @@ z-index:5;
 text-decoration:none;
 color:inherit;
 }
+
+.deal-card{
+text-decoration:none;
+color:var(--black);
+}
+
+.deal-card:hover{
+color:var(--black);
+}
