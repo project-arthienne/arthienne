@@ -60,6 +60,18 @@ class Router {
             return;
         }
 
+        if($path==='/auctions'){
+            require '../app/controllers/auctionController.php';
+            (new auctionController())->index();
+            return;
+        }
+
+        if(str_starts_with($path,'/auction/view')){
+            require '../app/controllers/auctionController.php';
+            (new auctionController())->view();
+            return;
+        }
+
         if ($path === '/terms') {
             require '../app/controllers/termsController.php';
             (new termsController())->index();

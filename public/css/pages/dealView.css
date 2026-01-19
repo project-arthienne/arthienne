@@ -1,0 +1,48 @@
+.deal-view .gallery-outer{
+margin:64px 0;
+position:relative;
+}
+
+.deal-view .gallery-wrapper{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:48px;
+align-items:start;
+}
+
+.deal-view .gallery-main img{
+width:100%;
+height:420px;
+object-fit:cover;
+border:1px solid var(--black);
+box-shadow:6px 6px 0 var(--black);
+display:block;
+}
+
+.deal-view .gallery-thumbs{
+display:grid;
+grid-template-columns:1fr 1fr;
+grid-template-rows:1fr 1fr;
+gap:16px;
+}
+
+.deal-view .gallery-thumbs img{
+width:100%;
+height:200px;
+object-fit:cover;
+border:1px solid var(--black);
+box-shadow:6px 6px 0 var(--black);
+cursor:pointer;
+display:block;
+}
+
+.deal-view .description-box{
+margin:64px 0;
+}
+
+.deal-view .exhibition-info{
+display:flex;
+gap:16px;
+margin:24px 0;
+flex-wrap:wrap;
+}

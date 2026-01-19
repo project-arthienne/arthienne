@@ -1,5 +1,6 @@
 <?php require '../app/views/layouts/header.php'; ?>
 
+<div class="deal-view">
 <div class="page-wrapper" style="padding-top:120px;">
 
 <h1 class="page-title">Quiet Geometry</h1>

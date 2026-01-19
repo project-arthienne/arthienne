@@ -10,5 +10,8 @@
     <p>2025, Arthienne</p>
 </footer>
 <script src="/public/js/palette.js"></script>
+<script src="/arthienne/public/js/palette.js"></script>
+<script src="/arthienne/public/js/dealCarousel.js"></script>
+<script src="/arthienne/public/js/auctionCarousel.js"></script>
 </body>
 </html>

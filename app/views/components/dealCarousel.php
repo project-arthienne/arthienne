@@ -106,8 +106,8 @@ $deals = [
 <div class="deal-card">
 <img src="<?= $deal['image'] ?>">
 <h3><?= $deal['title'] ?></h3>
-<p><?= $deal['description'] ?></p>
 <span><?= $deal['price'] ?></span>
+<p><?= $deal['description'] ?></p>
 </div>
 </a>
 <?php endforeach; ?>

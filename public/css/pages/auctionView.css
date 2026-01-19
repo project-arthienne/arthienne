@@ -1,0 +1,66 @@
+.deal-view .main-display{
+display:grid;
+grid-template-columns:1.4fr 1fr;
+gap:48px;
+margin:64px 0;
+}
+
+.deal-view .big-placeholder{
+height:420px;
+border:1px solid var(--black);
+box-shadow:6px 6px 0 var(--black);
+overflow:hidden;
+}
+
+.deal-view .big-placeholder img{
+width:100%;
+height:100%;
+object-fit:cover;
+display:block;
+}
+
+.deal-view .mini-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+grid-template-rows:1fr 1fr;
+gap:16px;
+}
+
+.deal-view .mini-grid img{
+width:100%;
+height:200px;
+object-fit:cover;
+border:1px solid var(--black);
+box-shadow:6px 6px 0 var(--black);
+display:block;
+}
+
+.deal-view .content-area{
+display:grid;
+grid-template-columns:1.4fr 1fr;
+gap:64px;
+margin-top:64px;
+}
+
+.deal-view .bidding-side{
+align-self:start;
+}
+
+.deal-view .bid-form{
+display:flex;
+gap:12px;
+margin:24px 0;
+}
+
+.deal-view .bid-input{
+height:42px;
+padding:0 14px;
+border:1px solid var(--black);
+font-family:inherit;
+font-size:16px;
+width:140px;
+}
+
+.deal-view .bid-form .btn-compact{
+height:42px;
+}
