@@ -1,0 +1,46 @@
+.contact-section{
+display:flex;
+justify-content:center;
+align-items:center;
+flex:1;
+flex-direction:column;
+text-align:center;
+padding-bottom:80px;
+}
+
+.contact-section h1{
+font-size:36px;
+margin-bottom:24px;
+background:var(--copper);
+padding:12px 24px;
+display:inline-block;
+}
+
+.contact-section p{
+font-size:18px;
+line-height:1.7;
+max-width:900px;
+margin-bottom:48px;
+}
+
+.contact-form{
+display:flex;
+gap:24px;
+margin-bottom:48px;
+width:100%;
+max-width:700px;
+}
+
+.contact-form input,
+.contact-form select{
+border:1px solid var(--black);
+padding:16px 18px;
+font-family:'Playwrite US Modern',sans-serif;
+font-size:16px;
+width:100%;
+}
+
+.contact-form input::placeholder{
+font-family:'Playwrite US Modern',sans-serif;
+font-size:16px;
+}

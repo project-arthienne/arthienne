@@ -1,0 +1,47 @@
+.palette-shell{
+position:relative;
+width:100%;
+}
+
+.palette-wrapper{
+overflow:hidden;
+margin:64px 0;
+}
+
+.palette-viewport{
+overflow:hidden;
+width:100%;
+}
+
+.palette-track{
+display:flex;
+gap:24px;
+transition:transform 0.4s ease;
+}
+
+.palette-item{
+flex:0 0 220px;
+height:220px;
+overflow:hidden;
+}
+
+.palette-item img{
+width:100%;
+height:100%;
+object-fit:cover;
+display:block;
+}
+
+.palette-nav{
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+background:none;
+border:1px solid var(--black);
+padding:10px 14px;
+cursor:pointer;
+z-index:10;
+}
+
+.palette-nav.left{left:-72px;}
+.palette-nav.right{right:-72px;}
