@@ -31,6 +31,7 @@
 <link rel="stylesheet" href="/arthienne/public/css/pages/dealView.css">
 <link rel="stylesheet" href="/arthienne/public/css/pages/auctionView.css">
 <link rel="stylesheet" href="/arthienne/public/css/pages/terms.css">
+<link rel="stylesheet" href="/arthienne/public/css/pages/signIn.css">
 
 <title>Arthienne</title>
 </head>
@@ -48,12 +49,12 @@
         <nav>
             <ul class="nav">
                 <li><a class="nav-item" href="/arthienne/public/directdeals">Deals</a></li>
-                <li><a class="nav-item" href="/arthienne/public/exhibitions">Exhibitions</a></li>
                 <li><a class="nav-item" href="/arthienne/public/auctions">Auctions</a></li>
                 <li><a class="nav-item" href="/arthienne/public/forums">Forums</a></li>
                 <li><a class="nav-item" href="/arthienne/public/contact">Contact Us</a></li>
                 <li><a class="nav-item" href="/arthienne/public/faq">FAQ</a></li>
-                <li><a class="nav-item" href="/arthienne/public/singin">My Space</a></li>
+                <li><a class="nav-item" href="/arthienne/public/exhibitions">Exhibitions</a></li>
+                <li><a class="nav-item" href="/arthienne/public/signin">My Space</a></li>
             </ul>
         </nav>
     </div>

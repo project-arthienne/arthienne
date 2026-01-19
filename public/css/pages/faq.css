@@ -1,15 +1,11 @@
 .faq-container{
 max-width:800px;
-margin:0 auto;
+margin:64px auto 0;
 padding-bottom:96px;
 }
 
 .faq-title{
-background:var(--copper);
-padding:12px 24px;
-display:inline-block;
-font-size:36px;
-margin-bottom:48px;
+display:none;
 }
 
 .faq-item{
@@ -54,4 +50,9 @@ font-size:20px;
 
 .faq-item input:checked + .faq-question::after{
 transform:rotate(45deg);
+}
+
+.faq-cta{
+margin-top:72px;
+text-align:center;
 }

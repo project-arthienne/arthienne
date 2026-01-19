@@ -2,41 +2,53 @@
 
 <div class="page-wrapper" style="padding-top:120px;">
 
-<main class="contact-section">
-<h1>Get In Touch</h1>
-<p>To assist you better, please share your email and select the subject of your inquiry. Our team will reach out to you promptly.</p>
+<h1 class="page-title">Get In Touch</h1>
 
-<form class="contact-form" id="contactForm">
-<input type="email" placeholder="E-mail" required>
-<select required>
-<option value="">Topic</option>
-<option>Auctions</option>
-<option>Shop Inquiry</option>
-<option>Partnership</option>
-<option>Other</option>
-</select>
-</form>
+<p class="page-subtitle">
+To assist you better, please share your email and select the subject of your inquiry. Our team will reach out to you promptly.
+</p>
 
-<div class="btn-row">
-<button type="button" onclick="openTermsModal()">Send</button>
+<section class="contact-section contact-page">
+
+    <div class="contact-form-wrapper">
+        <form class="contact-form" id="contactForm">
+            <input type="email" placeholder="E-mail" required>
+
+            <select required>
+                <option value="">Topic</option>
+                <option>Auctions</option>
+                <option>Shop Inquiry</option>
+                <option>Partnership</option>
+                <option>Other</option>
+            </select>
+
+            <button type="button" class="btn-compact" onclick="openTermsModal()">
+                Send
+            </button>
+        </form>
+    </div>
+
+</section>
+
 </div>
-</main>
 
 <div class="terms-modal" id="termsModal">
-<div class="terms-modal-content">
-<h2>Terms And Conditions</h2>
-<p>By continuing, you confirm that you have read and agree to Arthienne’s Terms and Conditions.</p>
-<label class="terms-checkbox">
-<input type="checkbox" id="acceptTerms">
-I agree to the <a href="/arthienne/public/terms" target="_blank">Terms And Conditions</a>
-</label>
-<div class="terms-actions">
-<button id="declineTerms">Cancel</button>
-<button id="confirmTerms" disabled>Accept And Continue</button>
-</div>
-</div>
-</div>
+    <div class="terms-modal-content">
+        <h2>Terms And Conditions</h2>
+        <p>
+            By continuing, you confirm that you have read and agree to Arthienne’s Terms and Conditions.
+        </p>
 
+        <label class="terms-checkbox">
+            <input type="checkbox" id="acceptTerms">
+            I agree to the <a href="/arthienne/public/terms" target="_blank">Terms And Conditions</a>
+        </label>
+
+        <div class="terms-actions">
+            <button id="declineTerms">Cancel</button>
+            <button id="confirmTerms" disabled>Accept And Continue</button>
+        </div>
+    </div>
 </div>
 
 <script>
