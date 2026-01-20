@@ -189,7 +189,7 @@ CREATE TABLE "ManagingArtworks" (
     CONSTRAINT fk_ma_sm FOREIGN KEY ("SMID") REFERENCES "SiteManager"("SMID") ON UPDATE CASCADE ON DELETE CASCADE
 );
 
--- MmanagingAuctions table
+-- managingAuctions table
 CREATE TABLE "ManagingAuctions" (
     "AuctionID" INT NOT NULL,
     "SMID" INT NOT NULL,
@@ -206,5 +206,11 @@ CREATE TABLE "ManagingExhibitions" (
     CONSTRAINT fk_mexh_exhibition FOREIGN KEY ("ExhibitionID") REFERENCES "Exhibitions"("ExhibitionID") ON UPDATE CASCADE ON DELETE CASCADE,
     CONSTRAINT fk_mexh_sm FOREIGN KEY ("SMID") REFERENCES "SiteManager"("SMID") ON UPDATE CASCADE ON DELETE CASCADE
 );
+
+ALTER TABLE "Buyer"
+ADD COLUMN "BuyerPassword" VARCHAR(255) NOT NULL;
+
+ALTER TABLE "Seller"
+ADD COLUMN "SellerPassword" VARCHAR(255) NOT NULL;
 
 COMMIT;

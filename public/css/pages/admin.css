@@ -1,0 +1,65 @@
+.admin-section{
+display:flex;
+flex-direction:column;
+gap:48px;
+padding-bottom:96px;
+}
+
+.admin-card{
+border:1px solid var(--black);
+box-shadow:6px 6px 0 var(--black);
+padding:28px 32px;
+background:var(--white);
+}
+
+.admin-card h3{
+margin:0 0 12px 0;
+font-size:22px;
+}
+
+.admin-card p{
+margin:0;
+line-height:1.7;
+}
+
+.admin-form{
+max-width:520px;
+display:flex;
+flex-direction:column;
+gap:16px;
+}
+
+.admin-form input,
+.admin-form textarea{
+border:1px solid var(--black);
+padding:16px 18px;
+font-family:'Playwrite US Modern',sans-serif;
+font-size:16px;
+width:100%;
+background:#fff;
+}
+
+.admin-form textarea{
+min-height:160px;
+resize:vertical;
+}
+
+.admin-actions{
+display:flex;
+gap:16px;
+margin-top:16px;
+}
+
+.admin-links{
+display:flex;
+gap:24px;
+flex-wrap:wrap;
+margin-top:32px;
+}
+
+.admin-links a{
+text-decoration:none;
+border:1px solid var(--black);
+padding:14px 20px;
+color:var(--black);
+}

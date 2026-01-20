@@ -32,6 +32,8 @@
 <link rel="stylesheet" href="/arthienne/public/css/pages/auctionView.css">
 <link rel="stylesheet" href="/arthienne/public/css/pages/terms.css">
 <link rel="stylesheet" href="/arthienne/public/css/pages/signIn.css">
+<link rel="stylesheet" href="/arthienne/public/css/pages/admin.css">
+<link rel="stylesheet" href="/arthienne/public/css/pages/dashboard.css">
 
 <title>Arthienne</title>
 </head>

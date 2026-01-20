@@ -77,6 +77,113 @@ class Router {
             (new termsController())->index();
             return;
         }
+        if ($path === '/create-account/role') {
+            require '../app/controllers/createAccountController.php';
+            (new CreateAccountController())->role();
+            return;
+        }
+
+        if ($path === '/create-account/buyer') {
+            require '../app/controllers/createAccountController.php';
+            (new CreateAccountController())->buyer();
+            return;
+        }
+
+        if ($path === '/create-account/seller') {
+            require '../app/controllers/createAccountController.php';
+            (new CreateAccountController())->seller();
+            return;
+        }
+        
+        if ($path === '/signin') {
+            require '../app/controllers/signInController.php';
+            (new SignInController())->index();
+            return;
+        }
+
+        if ($path === '/signin/authenticate' && $_SERVER['REQUEST_METHOD'] === 'POST') {
+            require '../app/controllers/signInController.php';
+            (new SignInController())->authenticate();
+            return;
+        }
+
+        if ($path === '/logout') {
+            require '../app/controllers/logoutController.php';
+            (new logoutController())->index();
+            return;
+        }
+
+        if ($path === '/admin') {
+            require '../app/controllers/adminController.php';
+            (new adminController())->index();
+            return;
+        }
+
+        if ($path === '/admin/faq') {
+            require '../app/controllers/faqAdminController.php';
+            (new faqAdminController())->index();
+            return;
+        }
+
+        if ($path === '/admin/faq/create') {
+            require '../app/controllers/faqAdminController.php';
+            (new faqAdminController())->create();
+            return;
+        }
+
+        if ($path === '/admin/terms') {
+            require '../app/controllers/termsAdminController.php';
+            (new termsAdminController())->index();
+            return;
+        }
+
+        if ($path === '/admin/terms/update') {
+            require '../app/controllers/termsAdminController.php';
+            (new termsAdminController())->update();
+            return;
+        }
+
+        if ($path === '/admin/contact') {
+            require '../app/controllers/contactAdminController.php';
+            (new contactAdminController())->index();
+            return;
+        }
+
+        if ($path === '/buyer/dashboard') {
+            require '../app/controllers/buyerDashboardController.php';
+            (new buyerDashboardController())->dashboard();
+            return;
+        }
+
+        if ($path === '/buyer/edit') {
+            require '../app/controllers/buyerDashboardController.php';
+            (new buyerDashboardController())->edit();
+            return;
+        }
+
+        if ($path === '/buyer/update') {
+            require '../app/controllers/buyerDashboardController.php';
+            (new buyerDashboardController())->update();
+            return;
+        }
+
+        if ($path === '/seller/dashboard') {
+            require '../app/controllers/sellerDashboardController.php';
+            (new sellerDashboardController())->dashboard();
+            return;
+        }
+
+        if ($path === '/seller/edit') {
+            require '../app/controllers/sellerDashboardController.php';
+            (new sellerDashboardController())->edit();
+            return;
+        }
+
+        if ($path === '/seller/update') {
+            require '../app/controllers/sellerDashboardController.php';
+            (new sellerDashboardController())->update();
+            return;
+        }
 
         http_response_code(404);
         echo '404';
