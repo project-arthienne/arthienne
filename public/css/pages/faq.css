@@ -1,3 +1,19 @@
+.faq-search{
+max-width:800px;
+margin:48px auto 0;
+display:flex;
+}
+
+.faq-search input{
+width:100%;
+height:52px;
+border:1px solid var(--black);
+padding:16px 18px;
+font-family:'Playwrite US Modern',sans-serif;
+font-size:16px;
+background:#fff;
+}
+
 .faq-container{
 max-width:800px;
 margin:64px auto 0;

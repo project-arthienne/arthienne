@@ -8,7 +8,22 @@
 Find clear answers to common questions about exhibitions, auctions, and using Arthienne.
 </p>
 
+<form method="GET" action="/arthienne/public/faq" class="faq-search">
+    <input
+        type="text"
+        name="q"
+        placeholder="Search FAQs"
+        value="<?= htmlspecialchars($_GET['q'] ?? '') ?>"
+    >
+</form>
+
 <div class="faq-container">
+
+<?php if (empty($faqs)): ?>
+<p style="text-align:center; margin-top:48px;">
+No results found.
+</p>
+<?php endif; ?>
 
 <?php foreach ($faqs as $index => $faq): ?>
 <div class="faq-item">
@@ -25,7 +40,7 @@ Find clear answers to common questions about exhibitions, auctions, and using Ar
 <div class="faq-cta">
 <p>Still confused?</p>
 <a href="/arthienne/public/contact">
-<button class="btn-compact">Contact Us</button>
+    <button class="btn-compact">Contact Us</button>
 </a>
 </div>
 
