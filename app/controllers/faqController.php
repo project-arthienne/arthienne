@@ -2,11 +2,35 @@
 
 require_once '../app/core/Database.php';
 
-class faqController {
+class FaqController {
 
     public function index() {
         $db = Database::getInstance()->getConnection();
-        $faqs = $db->query('SELECT * FROM "FAQ" WHERE "IsVisible" = TRUE')->fetchAll();
+
+        $query = $_GET['q'] ?? '';
+
+        if ($query !== '') {
+            $stmt = $db->prepare(
+                'SELECT * FROM "FAQ"
+                 WHERE "IsVisible" = TRUE
+                 AND (
+                     LOWER("Question") LIKE LOWER(?)
+                     OR LOWER("Answer") LIKE LOWER(?)
+                 )
+                 ORDER BY "FAQID" DESC'
+            );
+
+            $like = '%' . $query . '%';
+            $stmt->execute([$like, $like]);
+            $faqs = $stmt->fetchAll();
+        } else {
+            $faqs = $db->query(
+                'SELECT * FROM "FAQ"
+                 WHERE "IsVisible" = TRUE
+                 ORDER BY "FAQID" DESC'
+            )->fetchAll();
+        }
+
         require '../app/views/pages/faq.php';
     }
 }

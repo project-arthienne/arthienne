@@ -1,3 +1,6 @@
+create database product_manager;
+
+
 -- 1. base entity tables
 --------------------------------------------------------------------------------
 
@@ -207,10 +210,147 @@ CREATE TABLE "ManagingExhibitions" (
     CONSTRAINT fk_mexh_sm FOREIGN KEY ("SMID") REFERENCES "SiteManager"("SMID") ON UPDATE CASCADE ON DELETE CASCADE
 );
 
+--TRUNCATE TABLE
+--"ManagingExhibitions",
+--"ManagingAuctions",
+--"ManagingArtworks",
+--"ManagingForums",
+--"SellerInExhibitions",
+--"BuyerInExhibitions",
+--"SellerInForums",
+--"BuyerInForums",
+--"SellerInAuctions",
+--"BuyerInAuctions",
+--"ArtworkCategory",
+--"Order",
+--"Image",
+--"Artworks",
+--"Forums",
+--"Exhibitions",
+--"Auctions",
+--"Category",
+--"SiteManager",
+--"Seller",
+--"Buyer"
+--RESTART IDENTITY CASCADE;
+
+
+-- new changes below
+
 ALTER TABLE "Buyer"
 ADD COLUMN "BuyerPassword" VARCHAR(255) NOT NULL;
 
 ALTER TABLE "Seller"
 ADD COLUMN "SellerPassword" VARCHAR(255) NOT NULL;
 
+ALTER TABLE "SiteManager"
+ADD COLUMN "SMPassword" VARCHAR(255) NOT NULL;
+
+CREATE TABLE "ContactMessage" (
+    "MessageID" SERIAL PRIMARY KEY,
+    "Email" VARCHAR(255) NOT NULL,
+    "Topic" VARCHAR(100) NOT NULL,
+    "Message" TEXT,
+    "CreatedAt" TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE "FAQ" (
+    "FAQID" SERIAL PRIMARY KEY,
+    "Question" TEXT NOT NULL,
+    "Answer" TEXT NOT NULL,
+    "IsVisible" BOOLEAN DEFAULT TRUE
+);
+
+CREATE TABLE "Terms" (
+    "TermsID" SERIAL PRIMARY KEY,
+    "Content" TEXT NOT NULL,
+    "LastUpdated" TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+SELECT * FROM "SiteManager";
+
+ALTER TABLE "Forums"
+ADD COLUMN "ForumDescription" TEXT NOT NULL;
+
+CREATE TABLE "ForumComment" (
+    "CommentID" SERIAL PRIMARY KEY,
+    "ForumID" INT NOT NULL,
+    "UserType" VARCHAR(10) NOT NULL,
+    "UserID" INT NOT NULL,
+    "CommentText" TEXT NOT NULL,
+    "CreatedAt" TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT fk_comment_forum
+        FOREIGN KEY ("ForumID") REFERENCES "Forums"("ForumID")
+        ON DELETE CASCADE
+);
+
+INSERT INTO "Forums" ("ForumTitle","ForumDescription") VALUES
+('Contemporary Art And Culture','Discuss modern artistic movements, cultural impact, and evolving creative expression.'),
+('Digital Art And NFT Discourse','Explore digital creation, NFTs, blockchain ownership, and emerging platforms.'),
+('Auction Market Trends And Insights','Share insights on auction prices, bidding behavior, and market valuation.'),
+('Emerging Artists And New Voices','Highlight rising artists and new creative voices shaping the art world.'),
+('Sculpture Materials And Techniques','Discuss sculptural processes, materials, and three-dimensional form.'),
+('Abstract Expression And Meaning','Debate interpretation, symbolism, and emotional abstraction in art.'),
+('Art Collecting For Beginners','Guidance and discussion for first-time collectors and enthusiasts.'),
+('Exhibition Reviews And Critiques','Share opinions and critiques of exhibitions worldwide.'),
+('The Role Of AI In Art','Discuss artificial intelligence as a creative and conceptual tool.'),
+('Photography As Fine Art','Explore photography’s role, techniques, and artistic legitimacy.');
+
+INSERT INTO "Exhibitions" ("ExhibitionDate","ExhibitionTitle","ExhibitionDescription")
+VALUES
+('2025-09-15','Modern Masters','A curated exhibition celebrating influential abstract artists of the twentieth century.'),
+('2025-12-01','Digital Dreams','An immersive look into contemporary digital painting and NFT culture.'),
+('2026-03-10','Sculpted Silence','Minimalist bronze sculptures exploring form, balance, and stillness.'),
+('2026-04-18','Echoes In Oil','Exploring memory and emotion through layered oil compositions.'),
+('2026-06-02','Forms Of Stillness','A study of quiet geometry and restrained sculptural form.'),
+('2026-08-19','Fragments Of Light','Works focused on contrast, reflection, and perception through mixed media.');
+
+INSERT INTO "SellerInExhibitions" ("SellerID","ExhibitionID")
+VALUES
+(1,1),
+(2,2),
+(3,3),
+(4,4),
+(5,5),
+(6,6);
+
+INSERT INTO "FAQ" ("Question","Answer") VALUES
+('How do I participate in an exhibition?','You can browse exhibitions and register through your My Space account.'),
+('Is bidding legally binding?','Yes, all bids placed on Arthienne are final and legally binding.'),
+('How do artists submit their work?','Artists can upload artworks directly from their My Space dashboard.'),
+('Are all artworks authentic?','Yes, every artwork is reviewed before being listed on the platform.'),
+('Can I contact an artist directly?','Yes, contact options are available on individual artwork pages.'),
+('What happens if an auction ends?','The highest bidder at the end of the auction wins the artwork.');
+
+
+INSERT INTO "Terms" ("Content")
+VALUES (
+'Arthienne is an online platform dedicated to the exhibition, auction, and direct sale of artworks. By accessing or using this platform, you acknowledge that you have read, understood, and agree to be bound by the following terms and conditions.
+
+1. User Accounts
+Users are responsible for maintaining the confidentiality of their account credentials, including login information and personal details. Any activity conducted through a registered account is deemed to be performed by the account holder. Arthienne reserves the right to suspend or terminate accounts that violate platform guidelines, misuse services, or engage in fraudulent or harmful behavior.
+
+2. Exhibitions And Auctions
+Participation in exhibitions and auctions hosted on Arthienne is subject to approval and review. Arthienne retains the right to curate, modify, or remove exhibitions at its discretion. All bids placed during auctions are final and legally binding. Users are responsible for ensuring accuracy before submitting any bid.
+
+3. Intellectual Property
+All content published on Arthienne, including images, text, branding elements, and platform design, is protected under applicable intellectual property laws. Users may not reproduce, distribute, or exploit platform content without prior written consent from Arthienne or the respective rights holder.
+
+4. Limitation Of Liability
+Arthienne shall not be held liable for any indirect, incidental, or consequential damages arising from the use or inability to use the platform. While reasonable efforts are made to ensure platform availability and accuracy, Arthienne does not guarantee uninterrupted service or error-free operation.
+
+5. Governing Law
+These terms and conditions shall be governed by and interpreted in accordance with the applicable laws of the operating jurisdiction, without regard to conflict of law principles.
+
+6. Payments And Transactions
+All payments conducted through Arthienne must be completed using approved payment methods. Prices, fees, and applicable taxes are clearly displayed prior to confirmation. Arthienne is not responsible for delays or failures caused by third-party payment providers.
+
+7. Artist And Seller Responsibilities
+Artists and sellers are responsible for the accuracy of information provided regarding their artworks, including descriptions, pricing, and authenticity. Any disputes regarding ownership or authenticity must be resolved by the seller in accordance with platform policies.
+
+8. Modifications To Terms
+Arthienne reserves the right to update or modify these terms at any time. Continued use of the platform following changes constitutes acceptance of the revised terms.'
+);
+
 COMMIT;
+

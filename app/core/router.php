@@ -14,13 +14,19 @@ class Router {
 
         if ($path === '/exhibitions') {
             require '../app/controllers/exhibitionController.php';
-            (new exhibitionController())->index();
+            (new ExhibitionController())->index();
             return;
         }
 
         if ($path === '/exhibitions/view') {
             require '../app/controllers/exhibitionController.php';
-            (new exhibitionController())->view();
+            (new ExhibitionController())->view();
+            return;
+        }
+
+        if ($path === '/seller/view') {
+            require '../app/controllers/sellerController.php';
+            (new SellerController())->view();
             return;
         }
 
