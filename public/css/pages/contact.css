@@ -26,17 +26,28 @@ max-width:420px;
 }
 
 .contact-form input,
-.contact-form select{
+.contact-form select,
+.contact-form textarea{
 border:1px solid var(--black);
-padding:4px 16px;
+padding:16px 18px;
 font-family:'Playwrite US Modern',sans-serif;
 font-size:16px;
 width:100%;
 background:#fff;
+}
+
+.contact-form input,
+.contact-form select{
 height:52px;
 }
 
-.contact-form input::placeholder{
+.contact-form textarea{
+min-height:120px;
+resize:vertical;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder{
 font-family:'Playwrite US Modern',sans-serif;
 font-size:16px;
 color:#777;
@@ -54,4 +65,7 @@ color:var(--black);
 .contact-form button{
 width:100%;
 height:52px;
+display:flex;
+align-items:center;
+justify-content:center;
 }

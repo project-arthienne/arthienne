@@ -23,15 +23,17 @@ color:var(--black);
 }
 
 .dashboard-form{
-max-width:420px;
-margin:56px auto 0;
+max-width:1080px;
+margin:48px auto 0;
 display:flex;
 flex-direction:column;
 gap:24px;
+width:100%;
 }
 
 .dashboard-form input,
 .dashboard-form textarea{
+width:100%;
 border:1px solid var(--black);
 padding:16px 18px;
 height:52px;
@@ -51,4 +53,37 @@ height:52px;
 display:flex;
 align-items:center;
 justify-content:center;
+}
+
+.admin-table{
+width:100%;
+border-collapse:collapse;
+margin-top:48px;
+}
+
+.admin-table th,
+.admin-table td{
+border:1px solid var(--black);
+padding:16px;
+text-align:left;
+vertical-align:top;
+}
+
+.admin-table th{
+background:var(--copper);
+font-weight:500;
+}
+
+.admin-table td a.btn-compact{
+text-decoration:none;
+color:var(--black);
+}
+
+a.btn-compact{
+text-decoration:none;
+color:var(--black);
+}
+
+a.btn-compact:hover{
+color:var(--black);
 }

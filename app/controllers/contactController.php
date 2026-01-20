@@ -2,14 +2,18 @@
 
 require_once '../app/core/Database.php';
 
-class contactController {
+class ContactController {
+
+    public function index() {
+        require '../app/views/pages/contact.php';
+    }
 
     public function submit() {
         $db = Database::getInstance()->getConnection();
 
         $stmt = $db->prepare(
-            'INSERT INTO "ContactMessage" ("Email", "Topic", "Message")
-             VALUES (?, ?, ?)'
+            'INSERT INTO "ContactMessage" ("Email","Topic","Message")
+             VALUES (?,?,?)'
         );
 
         $stmt->execute([

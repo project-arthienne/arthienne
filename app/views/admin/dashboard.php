@@ -9,6 +9,7 @@ Manage platform content, moderation, and public-facing information.
 </p>
 
 <section class="admin-links" style="display:flex; gap:24px; justify-content:center; margin-top:48px;">
+    <a href="/arthienne/public/admin/forums" class="btn-compact" style="text-decoration:none; color:inherit;">Manage Forums</a>
     <a href="/arthienne/public/admin/faq" class="btn-compact" style="text-decoration:none; color:inherit;">Manage FAQs</a>
     <a href="/arthienne/public/admin/terms" class="btn-compact" style="text-decoration:none; color:inherit;">Manage Terms</a>
     <a href="/arthienne/public/admin/contact" class="btn-compact" style="text-decoration:none; color:inherit;">View Contact Requests</a>

@@ -8,21 +8,36 @@
 Messages submitted by users via the contact form.
 </p>
 
-<section class="admin-section">
-
 <?php if (empty($messages)): ?>
 <p>No contact requests yet.</p>
-<?php endif; ?>
+<?php else: ?>
+
+<table class="admin-table">
+<thead>
+<tr>
+<th>Email</th>
+<th>Topic</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
 
 <?php foreach ($messages as $m): ?>
-<div class="admin-card">
-<h3><?= htmlspecialchars($m['Email']) ?></h3>
-<p><strong>Topic:</strong> <?= htmlspecialchars($m['Topic']) ?></p>
-<p><?= nl2br(htmlspecialchars($m['Message'])) ?></p>
-</div>
+<tr>
+<td><?= htmlspecialchars($m['Email']) ?></td>
+<td><?= htmlspecialchars($m['Topic']) ?></td>
+<td>
+<a href="/arthienne/public/admin/contact/view?id=<?= $m['MessageID'] ?>" class="btn-compact">
+Get Details
+</a>
+</td>
+</tr>
 <?php endforeach; ?>
 
-</section>
+</tbody>
+</table>
+
+<?php endif; ?>
 
 </div>
 
