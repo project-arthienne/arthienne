@@ -4,26 +4,37 @@
 
 <h1 class="page-title">FAQ Manager</h1>
 
-<p class="page-subtitle">
-Add, review, and manage frequently asked questions shown to users.
-</p>
-
-<section class="admin-section">
-
-<form method="POST" action="/arthienne/public/admin/faq/create" class="admin-form">
-<input name="question" placeholder="Question" required>
-<textarea name="answer" placeholder="Answer" required></textarea>
+<form method="POST" action="/arthienne/public/admin/faq/create" class="dashboard-form">
+<input name="question" placeholder="New Question" required>
+<textarea name="answer" placeholder="New Answer" required></textarea>
 <button class="btn-compact">Add FAQ</button>
 </form>
 
 <?php foreach ($faqs as $f): ?>
-<div class="admin-card">
-<h3><?= $f['Question'] ?></h3>
-<p><?= $f['Answer'] ?></p>
-</div>
-<?php endforeach; ?>
+<form method="POST" action="/arthienne/public/admin/faq/update" class="dashboard-form" style="margin-top:48px;">
+<input type="hidden" name="faqId" value="<?= $f['FAQID'] ?>">
 
-</section>
+<input name="question" value="<?= htmlspecialchars($f['Question']) ?>" required>
+
+<textarea name="answer" required><?= htmlspecialchars($f['Answer']) ?></textarea>
+
+<div class="dashboard-actions">
+
+<button formaction="/arthienne/public/admin/faq/update" class="btn-compact">
+Update
+</button>
+
+<button formaction="/arthienne/public/admin/faq/toggle" class="btn-compact">
+<?= $f['IsVisible'] ? 'Hide' : 'Show' ?>
+</button>
+
+<button formaction="/arthienne/public/admin/faq/delete" class="btn-compact">
+Delete
+</button>
+
+</div>
+</form>
+<?php endforeach; ?>
 
 </div>
 

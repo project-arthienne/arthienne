@@ -10,53 +10,17 @@ Find clear answers to common questions about exhibitions, auctions, and using Ar
 
 <div class="faq-container">
 
+<?php foreach ($faqs as $index => $faq): ?>
 <div class="faq-item">
-<input type="checkbox" id="q1">
-<label for="q1" class="faq-question">How do I participate in an exhibition?</label>
-<div class="faq-answer">
-<p>You can browse exhibitions and register through your My Space account.</p>
+    <input type="checkbox" id="q<?= $index ?>">
+    <label for="q<?= $index ?>" class="faq-question">
+        <?= htmlspecialchars($faq['Question']) ?>
+    </label>
+    <div class="faq-answer">
+        <p><?= nl2br(htmlspecialchars($faq['Answer'])) ?></p>
+    </div>
 </div>
-</div>
-
-<div class="faq-item">
-<input type="checkbox" id="q2">
-<label for="q2" class="faq-question">Is bidding legally binding?</label>
-<div class="faq-answer">
-<p>Yes, all bids placed on Arthienne are final and legally binding.</p>
-</div>
-</div>
-
-<div class="faq-item">
-<input type="checkbox" id="q3">
-<label for="q3" class="faq-question">How do artists submit their work?</label>
-<div class="faq-answer">
-<p>Artists can upload artworks directly from their My Space dashboard.</p>
-</div>
-</div>
-
-<div class="faq-item">
-<input type="checkbox" id="q4">
-<label for="q4" class="faq-question">Are all artworks authentic?</label>
-<div class="faq-answer">
-<p>Yes, every artwork is reviewed before being listed on the platform.</p>
-</div>
-</div>
-
-<div class="faq-item">
-<input type="checkbox" id="q5">
-<label for="q5" class="faq-question">Can I contact an artist directly?</label>
-<div class="faq-answer">
-<p>Yes, contact options are available on individual artwork pages.</p>
-</div>
-</div>
-
-<div class="faq-item">
-<input type="checkbox" id="q6">
-<label for="q6" class="faq-question">What happens if an auction ends?</label>
-<div class="faq-answer">
-<p>The highest bidder at the end of the auction wins the artwork.</p>
-</div>
-</div>
+<?php endforeach; ?>
 
 <div class="faq-cta">
 <p>Still confused?</p>

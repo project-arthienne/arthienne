@@ -22,3 +22,12 @@ white-space:nowrap;
 overflow:hidden;
 text-overflow:ellipsis;
 }
+
+.forum-link{
+text-decoration:none;
+color:var(--black);
+}
+
+.forum-link:hover{
+color:var(--black);
+}

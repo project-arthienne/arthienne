@@ -36,6 +36,12 @@ class Router {
             return;
         }
 
+        if ($path === '/contact/submit' && $_SERVER['REQUEST_METHOD'] === 'POST') {
+            require '../app/controllers/contactController.php';
+            (new ContactController())->submit();
+            return;
+        }
+
         if ($path === '/faq') {
             require '../app/controllers/faqController.php';
             (new faqController())->index();
@@ -131,6 +137,24 @@ class Router {
             return;
         }
 
+        if ($path === '/admin/faq/update') {
+            require '../app/controllers/faqAdminController.php';
+            (new faqAdminController())->update();
+            return;
+        }
+
+        if ($path === '/admin/faq/toggle') {
+            require '../app/controllers/faqAdminController.php';
+            (new faqAdminController())->toggle();
+            return;
+        }
+
+        if ($path === '/admin/faq/delete') {
+            require '../app/controllers/faqAdminController.php';
+            (new faqAdminController())->delete();
+            return;
+        }
+
         if ($path === '/admin/terms') {
             require '../app/controllers/termsAdminController.php';
             (new termsAdminController())->index();
@@ -146,6 +170,12 @@ class Router {
         if ($path === '/admin/contact') {
             require '../app/controllers/contactAdminController.php';
             (new contactAdminController())->index();
+            return;
+        }
+
+        if ($path === '/admin/contact/view') {
+            require '../app/controllers/contactAdminController.php';
+            (new contactAdminController())->view();
             return;
         }
 
@@ -182,6 +212,36 @@ class Router {
         if ($path === '/seller/update') {
             require '../app/controllers/sellerDashboardController.php';
             (new sellerDashboardController())->update();
+            return;
+        }
+
+        if ($path === '/forums') {
+            require '../app/controllers/forumController.php';
+            (new ForumController())->index();
+            return;
+        }
+
+        if ($path === '/forum/view') {
+            require '../app/controllers/forumController.php';
+            (new ForumController())->view();
+            return;
+        }
+
+        if ($path === '/forum/comment' && $_SERVER['REQUEST_METHOD'] === 'POST') {
+            require '../app/controllers/forumController.php';
+            (new ForumController())->comment();
+            return;
+        }
+
+        if ($path === '/admin/forums') {
+            require '../app/controllers/forumAdminController.php';
+            (new forumAdminController())->index();
+            return;
+        }
+
+        if ($path === '/admin/forums/create') {
+            require '../app/controllers/forumAdminController.php';
+            (new forumAdminController())->create();
             return;
         }
 

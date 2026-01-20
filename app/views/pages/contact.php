@@ -11,16 +11,18 @@ To assist you better, please share your email and select the subject of your inq
 <section class="contact-section contact-page">
 
     <div class="contact-form-wrapper">
-        <form class="contact-form" id="contactForm">
-            <input type="email" placeholder="E-mail" required>
+        <form class="contact-form" id="contactForm" method="POST" action="/arthienne/public/contact/submit">
+            <input type="email" name="email" placeholder="E-mail" required>
 
-            <select required>
+            <select name="topic" required>
                 <option value="">Topic</option>
                 <option>Auctions</option>
                 <option>Shop Inquiry</option>
                 <option>Partnership</option>
                 <option>Other</option>
             </select>
+
+            <textarea name="message" placeholder="Message (optional)"></textarea>
 
             <button type="button" class="btn-compact" onclick="openTermsModal()">
                 Send
