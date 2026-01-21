@@ -45,45 +45,42 @@ The project is built using PHP with an MVC architecture, PostgreSQL for data sto
 ## Project Structure
 
 arthienne/
-│
-├── app/
-│ ├── controllers/
-│ ├── core/
-│ │ ├── Database.php
-│ │ └── Router.php
-│ ├── views/
-│ │ ├── pages/
-│ │ ├── admin/
-│ │ └── layouts/
-│
-├── public/
-│ ├── css/
-│ ├── js/
-│ ├── assets/
-│ └── index.php
-│
-└── README.md
 
-arthienne/
 │
-├── app/
-│ ├── controllers/
-│ ├── core/
-│ │ ├── Database.php
-│ │ └── Router.php
-│ ├── views/
-│ │ ├── pages/
-│ │ ├── admin/
-│ │ └── layouts/
-│
-├── public/
-│ ├── css/
-│ ├── js/
-│ ├── assets/
-│ └── index.php
-│
-└── README.md
 
+├── app/
+
+│ ├── controllers/
+
+│ ├── core/
+
+│ │ ├── Database.php
+
+│ │ └── Router.php
+
+│ ├── views/
+
+│ │ ├── pages/
+
+│ │ ├── admin/
+
+│ │ └── layouts/
+
+│
+
+├── public/
+
+│ ├── css/
+
+│ ├── js/
+
+│ ├── assets/
+
+│ └── index.php
+
+│
+
+└── README.md
 
 ---
 
